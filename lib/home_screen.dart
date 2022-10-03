@@ -52,10 +52,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   appBar(),
-                  Expanded(
-                    child: FutureBuilder<bool>(
-                      future: getData(),
-                      builder:
+                 
                           (BuildContext context, AsyncSnapshot<bool> snapshot) {
                         if (!snapshot.hasData) {
                           return const SizedBox();
@@ -95,6 +92,22 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                               },
                             ),
                             gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: multiple ? 2 : 1,
+                              mainAxisSpacing: 12.0,
+                              crossAxisSpacing: 12.0,
+                              childAspectRatio: 1.5,
+                            ),
+                          );
+                           gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: multiple ? 2 : 1,
+                              mainAxisSpacing: 12.0,
+                              crossAxisSpacing: 12.0,
+                              childAspectRatio: 1.5,
+                            ),
+                          );
+                           gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: multiple ? 2 : 1,
                               mainAxisSpacing: 12.0,
@@ -153,6 +166,21 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               color: isLightMode ? Colors.white : AppTheme.nearlyBlack,
               child: Material(
                 color: Colors.transparent,
+                 gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: multiple ? 2 : 1,
+                              mainAxisSpacing: 12.0,
+                              crossAxisSpacing: 12.0,
+                              childAspectRatio: 1.5,
+                            ),
+                          ); gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: multiple ? 2 : 1,
+                              mainAxisSpacing: 12.0,
+                              crossAxisSpacing: 12.0,
+                              childAspectRatio: 1.5,
+                            ),
+                          );
                 child: InkWell(
                   borderRadius:
                       BorderRadius.circular(AppBar().preferredSize.height),
